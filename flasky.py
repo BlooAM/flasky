@@ -9,7 +9,7 @@ from wtforms.validators import DataRequired
 
 
 app = Flask(__name__)
-app.config['SECRET_KET'] = 'HardToGuessSecretKey'
+app.config['SECRET_KEY'] = 'HardToGuessSecretKey'
 
 bootstrap = Bootstrap(app)
 moment = Moment(app)
