@@ -23,7 +23,7 @@ def index():
     form = NameForm()
     if form.validate_on_submit():
         old_name = session.get('name')
-        if old_name is not None and old_name != form.data.name:
+        if old_name is not None and old_name != form.name.data:
             flash('It seems you changed your name!')
         session['name'] = form.name.data
         return redirect(url_for('index'))
