@@ -130,6 +130,3 @@ dmypy.json
 
 #In-memory database
 data.sqlite
-
-#Database migrations
-migrations/
