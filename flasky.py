@@ -4,6 +4,7 @@ from tokenize import String
 
 from flask import Flask, render_template, session, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
+from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
@@ -18,11 +19,17 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'HardToGuessSecretKey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME') #TODO: set mail password in MAIL_USER environ var
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD') #TODO: set mail password in MAIL_PASWORD environ var
 
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+mail = Mail(app)
 
 class Role(db.Model):
     __tablename__ = 'roles'
