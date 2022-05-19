@@ -26,12 +26,14 @@ app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME') #TODO: set mail us
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD') #TODO: set mail password in MAIL_PASWORD environ var
 app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '[Flasky]'
 app.config['FLASKY_MAIL_SENDER'] = 'Flasky Admin <flasky@example.com>'
+app.config['FLASKY_ADMIN'] = os.environ.get('FLASKY_ADMIN') #TODO: set flasky admin name in FLASKY_ADMIN environ var
 
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 mail = Mail(app)
+
 
 def send_email(to, subject, template, **kwargs):
     msg = Message(
@@ -42,7 +44,8 @@ def send_email(to, subject, template, **kwargs):
     msg.body = render_template(template, + '.txt', **kwargs)
     msg.html = render_template(template + '.html', **kwargs)
     mail.send(msg)
-    
+
+
 class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
@@ -66,6 +69,7 @@ class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
+
 @app.route('/', methods=['POST', 'GET'])
 def index():
     form = NameForm()
@@ -76,6 +80,8 @@ def index():
             db.session.add(user)
             db.session.commit()
             session['known'] = False
+            if app.config['FLASKY_ADMIN']:
+                send_email(app.config['FLASKY_ADMIN'], 'New user', 'mail/new_user', user=user)
         else:
             session['known'] = True
         session['name'] = form.name.data
