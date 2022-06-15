@@ -49,7 +49,3 @@ def index():
 @main.route('/user/<name>')
 def user(name):
     return render_template('user.html', name=name)
-
-@main.shell_context_processor
-def make_shell_context():
-    return dict(db=db, User=User, Role=Role)
