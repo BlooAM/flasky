@@ -1,17 +1,4 @@
-import os
-from app import create_app, db
-from app.models import User, Role
-from flask_migrate import Migrate
-
-
-basedir = os.path.abspath(os.path.dirname(__file__))
-app = Flask(__name__)
-
-bootstrap = Bootstrap(app)
-moment = Moment(app)
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-mail = Mail(app)
+from . import db
 
 
 class Role(db.Model):
@@ -31,7 +18,3 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
-
-
-
-
