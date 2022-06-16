@@ -5,7 +5,7 @@ from flask import render_template, session, redirect, url_for
 from flask_mail import Message
 
 from . import main
-from .forms import NameForm
+from .forms.forms import NameForm
 from .. import db, mail
 from ..models import User, Role
 
