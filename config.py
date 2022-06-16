@@ -7,7 +7,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'HardToGuessSecretKey')
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.googlemail.com')
     MAIL_PORT = int(os.environ.get('MAIL_PORT', 587))
-    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', 'true').to_lower() in ['true', 'on', '1'] 
+    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', 'true').lower() in ['true', 'on', '1'] 
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME') #TODO: set mail user in MAIL_USER environ var
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') #TODO: set mail password in MAIL_PASWORD environ var
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
