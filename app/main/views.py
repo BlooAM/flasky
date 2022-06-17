@@ -37,8 +37,6 @@ def index():
             db.session.add(user)
             db.session.commit()
             session['known'] = False
-            if main.config['FLASKY_ADMIN']:
-                send_email(main.config['FLASKY_ADMIN'], 'New user', 'mail/new_user', user=user)
         else:
             session['known'] = True
         session['name'] = form.name.data
