@@ -4,10 +4,10 @@ from threading import Thread
 from flask import render_template, session, redirect, url_for
 from flask_mail import Message
 
-from . import main
-from .forms.forms import NameForm
-from .. import db, mail
-from ..models import User, Role
+from app.main import main
+from app.main.forms.forms import NameForm
+from app import db, mail
+from app.models import User, Role
 
 
 def send_async_email(app, msg):

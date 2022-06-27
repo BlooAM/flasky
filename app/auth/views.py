@@ -1,6 +1,6 @@
 from flask import render_template
 
-from app import auth
+from app.auth import auth
 
 
 @auth.route('/login')
