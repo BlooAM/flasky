@@ -1,9 +1,13 @@
 alembic @ file:///home/conda/feedstock_root/build_artifacts/alembic_1647367721563/work
 blinker==1.4
-certifi @ file:///C:/Windows/TEMP/abs_e9b7158a-aa56-4a5b-87b6-c00d295b01fanefpc8_o/croots/recipe/certifi_1655968940823/work/certifi
+certifi==2022.6.15
+cffi @ file:///D:/bld/cffi_1636046278333/work
 click @ file:///C:/ci/click_1646038595831/work
 colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
+cryptography @ file:///D:/bld/cryptography_1652967266737/work
+dnspython @ file:///home/conda/feedstock_root/build_artifacts/dnspython_1646621171513/work
 dominate @ file:///home/conda/feedstock_root/build_artifacts/dominate_1622404657073/work
+email-validator @ file:///home/conda/feedstock_root/build_artifacts/email-validator-meta_1651458094096/work
 Flask @ file:///tmp/build/80754af9/flask_1634118196080/work
 Flask-Bootstrap==3.3.7.1
 Flask-Login @ file:///Users/ktietz/demo/mc3/conda-bld/flask-login_1629875349535/work
@@ -13,12 +17,14 @@ Flask-Moment @ file:///home/conda/feedstock_root/build_artifacts/flask-moment_16
 Flask-SQLAlchemy @ file:///home/conda/feedstock_root/build_artifacts/flask-sqlalchemy_1616102249273/work
 Flask-WTF==0.14.3
 greenlet @ file:///D:/bld/greenlet_1648882589361/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1642433548627/work
 importlib-metadata @ file:///D:/bld/importlib-metadata_1648728550588/work
 importlib-resources @ file:///home/conda/feedstock_root/build_artifacts/importlib_resources_1650169872758/work
 itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
 Jinja2 @ file:///tmp/build/80754af9/jinja2_1635780242639/work
 Mako @ file:///home/conda/feedstock_root/build_artifacts/mako_1649097013621/work
 MarkupSafe @ file:///C:/ci/markupsafe_1621528502553/work
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1636257122734/work
 python-dotenv @ file:///home/conda/feedstock_root/build_artifacts/python-dotenv_1648162816482/work
 SQLAlchemy @ file:///D:/bld/sqlalchemy_1651018320751/work
 visitor==0.1.3
