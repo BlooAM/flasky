@@ -131,3 +131,6 @@ dmypy.json
 #In-memory database
 data.sqlite
 app/data-dev.sqlite
+
+.idea/
+%SystemDrive%/
