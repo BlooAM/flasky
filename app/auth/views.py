@@ -3,7 +3,7 @@ from flask_login import login_user, logout_user, login_required
 
 from app.auth import auth
 from app.models import User
-from app.auth.forms import LoginForm
+from app.auth.forms.forms import LoginForm
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
